@@ -1329,8 +1329,8 @@ canvas:not(#ribbon-canvas),
   --global-font-size: 14px;
   --global-bg: #fff;
   --font-color: #4c4948;
-  --hr-border: #d2ebfd;
-  --hr-before-color: #bfe4fb;
+  --hr-border: #b3cce8;
+  --hr-before-color: #95b8df;
   --search-bg: #f6f8fa;
   --search-input-color: #4c4948;
   --search-a-color: #4c4948;
@@ -1892,7 +1892,7 @@ blockquote > :last-child {
   border-color: var(--pseudo-hover);
 }
 .article-sort-item-time {
-  color: #858585;
+  color: #b9b9b9;
   font-size: 95%;
 }
 .article-sort-item-time time {
@@ -1951,7 +1951,7 @@ blockquote > :last-child {
 }
 .category-lists .category-list .category-list-count {
   margin-left: 8px;
-  color: #858585;
+  color: #b9b9b9;
 }
 .category-lists .category-list .category-list-count:before {
   content: '(';
@@ -2294,7 +2294,7 @@ blockquote > :last-child {
 }
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap {
   margin: 6px 0;
-  color: #858585;
+  color: #b9b9b9;
   font-size: 90%;
 }
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .post-meta-date {
@@ -2319,7 +2319,7 @@ blockquote > :last-child {
   margin: 0 4px;
 }
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap a {
-  color: #858585;
+  color: #b9b9b9;
 }
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap a:hover {
   color: #49b1f5;
@@ -2511,7 +2511,7 @@ h1.page-title + .tag-cloud-list {
 #aside-content .aside-list > .aside-list-item .content > time,
 #aside-content .aside-list > .aside-list-item .content > .name {
   display: block;
-  color: #858585;
+  color: #b9b9b9;
   font-size: 85%;
 }
 #aside-content .aside-list > .aside-list-item .content > .title,
@@ -3593,7 +3593,7 @@ h1.page-title + .tag-cloud-list {
   text-align: center;
 }
 #pagination .page-number.current {
-  background: ##679ad1;
+  background: #679ad1;
   color: var(--white);
 }
 #pagination .pagination-info {
