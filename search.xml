@@ -4,6 +4,83 @@
   
     
     <entry>
+      <title>游戏音效分类与Keyword</title>
+      <link href="/2023/02/28/%E6%B8%B8%E6%88%8F%E9%9F%B3%E6%95%88%E5%88%86%E7%B1%BB/"/>
+      <url>/2023/02/28/%E6%B8%B8%E6%88%8F%E9%9F%B3%E6%95%88%E5%88%86%E7%B1%BB/</url>
+      
+        <content type="html"><![CDATA[<h2 id="引言"><a class="header-anchor" href="#引言"></a>引言</h2><p>本文涉及到的游戏音效分类方式，都来源于作者本人的游戏经历、学习内容、游戏声音设计经验等，不是唯一但是方便的。</p><h2 id="分类"><a class="header-anchor" href="#分类"></a>分类</h2><p>（直接上思维导图）下面是较为常见的分类方法，在每一次进行音效设计之前最好都写一个文档把涉及到的音效进行整理。</p><p><img src="/Users/chenxiang/mywebsite/source/_posts/%E6%B8%B8%E6%88%8F%E9%9F%B3%E6%95%88%E5%88%86%E7%B1%BB/%E5%9F%BA%E6%9C%AC%E5%B8%B8%E8%A7%81%E5%88%86%E7%B1%BB.png" alt="基本常见分类"></p><h2 id="Keyword"><a class="header-anchor" href="#Keyword"></a>Keyword</h2><h3 id="写在前面"><a class="header-anchor" href="#写在前面"></a>写在前面</h3><p>下面列表的单词都是在音效库中寻找素材的常见keyword，作为音效设计师“贴片”是最基本的技能。寻找好的素材除了丰富的第三方音效库，还需要学会如何用英文对声音进行描述。例如，当画面出现后，你要如何描述出脑中所产生的声音细节？越准确的描述越能帮助你找到精准的音效。平时多听多看专业音效库的命名是提高描述能力的方法之一</p><h3 id="UI"><a class="header-anchor" href="#UI"></a>UI</h3><ul><li>interface</li><li>click</li><li>button</li><li>press</li><li>open</li><li>close</li><li>next</li><li>back</li><li>error</li><li>slide</li><li>eject</li><li>positive</li><li>negative</li><li>neutral</li></ul><h3 id="技能"><a class="header-anchor" href="#技能"></a>技能</h3><ol><li><p>风</p><p>whoosh<br>dust<br>wind<br>moving<br>creak<br>crispy<br>reverse<br>magic</p></li><li><p>火</p><p>fire<br>fire throw<br>fire ball<br>cast<br>burst<br>launch<br>lance<br>reverse<br>magic</p></li><li><p>雷电</p><p>whoosh<br>zap<br>electric<br>thunder<br>reverse<br>magic</p></li><li><p>水</p><p>whoosh</p><p>water</p><p>bubble</p><p>burst</p><p>lance</p><p>Water impact</p><p>splash</p><p>reverse</p><p>Magic</p></li><li><p>地</p><p>whoosh</p><p>rock</p><p>Impact rock large</p><p>stone</p><p>reverse</p><p>magic</p></li><li><p>召唤</p><p>whoosh</p><p>summon</p><p>sphere</p><p>synth</p><p>large</p><p>whoosh long</p><p>evil</p><p>deliver</p><p>transfer</p><p>effect</p><p>fx</p><p>scifi</p><p>reverse</p><p>magic</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 游戏音频 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 音效 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>游戏音效分析之蛋仔派对</title>
+      <link href="/2023/02/28/%E6%B8%B8%E6%88%8F%E9%9F%B3%E6%95%88%E5%88%86%E6%9E%90%E4%B9%8B%E8%9B%8B%E4%BB%94%E6%B4%BE%E5%AF%B9/"/>
+      <url>/2023/02/28/%E6%B8%B8%E6%88%8F%E9%9F%B3%E6%95%88%E5%88%86%E6%9E%90%E4%B9%8B%E8%9B%8B%E4%BB%94%E6%B4%BE%E5%AF%B9/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 游戏音频 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 音效 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>FIR与IIR滤波器</title>
+      <link href="/2023/02/23/FIR%E4%B8%8EIIR%E6%BB%A4%E6%B3%A2%E5%99%A8/"/>
+      <url>/2023/02/23/FIR%E4%B8%8EIIR%E6%BB%A4%E6%B3%A2%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="FIR"><a class="header-anchor" href="#FIR"></a>FIR</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> DSP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Filter </tag>
+            
+            <tag> 数字音频 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>整理的一些数据结构基础算法</title>
       <link href="/2023/02/22/%E6%95%B4%E7%90%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
       <url>/2023/02/22/%E6%95%B4%E7%90%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</url>
@@ -33,7 +110,7 @@
       <link href="/2023/02/22/CNN/"/>
       <url>/2023/02/22/CNN/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="引言"><a class="header-anchor" href="#引言"></a>引言</h2><h2 id="卷积"><a class="header-anchor" href="#卷积"></a>卷积</h2>]]></content>
       
       
       <categories>
