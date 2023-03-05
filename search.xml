@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>AI+音频音乐相关</title>
+      <link href="/2023/03/05/resources/"/>
+      <url>/2023/03/05/resources/</url>
+      
+        <content type="html"><![CDATA[<h2 id="引言"><a class="header-anchor" href="#引言"></a>引言</h2><p>在这里放一些自己感兴趣的方向的论文以及AI音频音乐领域的相关产出。</p><h2 id="视频"><a class="header-anchor" href="#视频"></a>视频</h2><ol><li>Music + AI Reading Group <a href="https://www.youtube.com/@musicaireadinggroup945/featured">https://www.youtube.com/@musicaireadinggroup945/featured</a></li></ol><h2 id="API和数据集"><a class="header-anchor" href="#API和数据集"></a>API和数据集</h2><ol><li>Magenta <a href="https://magenta.tensorflow.org/">https://magenta.tensorflow.org/</a></li></ol><h2 id="论文和研究"><a class="header-anchor" href="#论文和研究"></a>论文和研究</h2><ol><li>MT3: Multi-Task Multitrack Music Transcription <a href="https://github.com/magenta/mt3">https://github.com/magenta/mt3</a></li></ol><h2 id="应用网站"><a class="header-anchor" href="#应用网站"></a>应用网站</h2><ol><li>Vocal Remover <a href="https://vocalremover.org/">https://vocalremover.org/</a></li><li>UVR5 <a href="https://github.com/Anjok07/ultimatevocalremovergui">https://github.com/Anjok07/ultimatevocalremovergui</a></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> AI </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Deep Learning </tag>
+            
+            <tag> Digital Audio </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>游戏音效分类与Keyword</title>
       <link href="/2023/02/28/%E6%B8%B8%E6%88%8F%E9%9F%B3%E6%95%88%E5%88%86%E7%B1%BB/"/>
       <url>/2023/02/28/%E6%B8%B8%E6%88%8F%E9%9F%B3%E6%95%88%E5%88%86%E7%B1%BB/</url>
@@ -72,7 +99,7 @@
             
             <tag> Filter </tag>
             
-            <tag> 数字音频 </tag>
+            <tag> Digital Audio </tag>
             
         </tags>
       
@@ -90,7 +117,7 @@
       
       <categories>
           
-          <category> Data Structure </category>
+          <category> 数据结构算法 </category>
           
       </categories>
       
@@ -110,7 +137,7 @@
       <link href="/2023/02/22/CNN/"/>
       <url>/2023/02/22/CNN/</url>
       
-        <content type="html"><![CDATA[<h2 id="引言"><a class="header-anchor" href="#引言"></a>引言</h2><h2 id="卷积"><a class="header-anchor" href="#卷积"></a>卷积</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="引言"><a class="header-anchor" href="#引言"></a>引言</h2><p><em>卷积神经网络</em>（convolutional neural network，CNN）是一类为<strong>处理图像</strong>数据而设计的神经网络。</p><h2 id="卷积"><a class="header-anchor" href="#卷积"></a>卷积</h2>]]></content>
       
       
       <categories>
