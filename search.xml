@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>免费的宝藏音频音乐工具</title>
+      <link href="/2023/04/28/%E2%80%9C%E5%85%8D%E8%B4%B9%E7%9A%84%E5%AE%9D%E8%97%8F%E9%9F%B3%E9%A2%91%E9%9F%B3%E4%B9%90%E5%B7%A5%E5%85%B7%E2%80%9D/"/>
+      <url>/2023/04/28/%E2%80%9C%E5%85%8D%E8%B4%B9%E7%9A%84%E5%AE%9D%E8%97%8F%E9%9F%B3%E9%A2%91%E9%9F%B3%E4%B9%90%E5%B7%A5%E5%85%B7%E2%80%9D/</url>
+      
+        <content type="html"><![CDATA[<p>放几个私藏的免费宝藏音频工具网站/APP，希望对大家有帮助</p><h3 id="伴奏-音频源分离（别再花钱去提取伴奏了）："><a class="header-anchor" href="#伴奏-音频源分离（别再花钱去提取伴奏了）："></a>伴奏/音频源分离（别再花钱去提取伴奏了）：</h3><p>Vocal Remover: 我最常用的网站之一，不仅可以分离人声和伴奏，还能分离贝斯、鼓、吉他。另外还有音高和BPM检测等功能，强推 <a href="https://vocalremover.org/">https://vocalremover.org/</a></p><p>Ultimate Vocal Remover: 桌面应用，集成了许多分离算法，可以自行下载尝试。（支持windows和macOS）<a href="https://github.com/Anjok07/ultimatevocalremovergui">https://github.com/Anjok07/ultimatevocalremovergui</a></p><p>BandLab: 类似库乐队一样的音乐制作软件，但里面集成了音频分离算法，且与上面两款不同，它是可以在手机使用的，所以给大家推荐。<br>ios: <a href="https://apps.apple.com/us/app/bandlab-music-making-studio/id968585775">https://apps.apple.com/us/app/bandlab-music-making-studio/id968585775</a><br>安卓(谷歌商店)：<a href="https://play.google.com/store/apps/details?id=com.bandlab.bandlab&amp;hl=en&amp;gl=US">https://play.google.com/store/apps/details?id=com.bandlab.bandlab&amp;hl=en&amp;gl=US</a><br>桌面版(支持windows和macOS): <a href="https://www.bandlab.com/products/desktop/assistant">https://www.bandlab.com/products/desktop/assistant</a></p><h3 id="转录"><a class="header-anchor" href="#转录"></a>转录</h3><p>（这里涉及到什么是MIDI音符，详细见下图）</p><p>Basic Pitch: 音频转MIDI，简单讲就是把你唱出来的旋律转成MIDI文件。例如，在库乐队里加载一个钢琴轨道，把这个MIDI文件拽进去，你就可以听到钢琴演奏对应的音高。非常适合哼唱作曲但没专业音乐训练的小伙伴 <a href="https://basicpitch.spotify.com/">https://basicpitch.spotify.com/</a></p><p>音频转MIDI谱：主要用于钢琴，如果有其他乐器在的话效果不是很好，但如果只有钢琴那效果绝佳，是字节国内团队研发的，支持一下。使用方法是拽入音频再点submit，右方就会出现视频演示。官方给出的网站只能下载视频，下载生成midi乐谱需要命令行操作。<a href="https://replicate.com/bytedance/piano-transcription">https://replicate.com/bytedance/piano-transcription</a></p><p><img src="image-20230428103412399.png" alt="image-20230428103412399"></p><h3 id="其他"><a class="header-anchor" href="#其他"></a>其他</h3><p>Drum Bot: 实时节奏生成。例如，你连接上MIDI键盘或者直接把电脑放在钢琴边，网站就可以根据你弹琴的速度实时生成一个鼓节奏型为你伴奏 演示：<a href="https://magenta.tensorflow.org/drumbot">https://magenta.tensorflow.org/drumbot</a> 网站：<a href="https://drumbot.glitch.me/">https://drumbot.glitch.me/</a></p><p>NCM转mp3：wyy的NCM格式转mp3[嘘] <a href="https://ncm.worthsee.com/">https://ncm.worthsee.com/</a></p><p>spotify音乐下载：<a href="https://spotifydown.com/">https://spotifydown.com/</a></p><p>MiConv 格式转换：我一般用来转音频格式，但是网站包含了常见的所有文件格式转换。<a href="https://miconv.com/">https://miconv.com/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tools </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>音频中时常提到的鲁棒性是什么意思？</title>
       <link href="/2023/04/12/%E9%9F%B3%E9%A2%91%E4%B8%AD%E6%97%B6%E5%B8%B8%E6%8F%90%E5%88%B0%E7%9A%84%E9%B2%81%E6%A3%92%E6%80%A7%E6%98%AF%E4%BB%80%E4%B9%88/"/>
       <url>/2023/04/12/%E9%9F%B3%E9%A2%91%E4%B8%AD%E6%97%B6%E5%B8%B8%E6%8F%90%E5%88%B0%E7%9A%84%E9%B2%81%E6%A3%92%E6%80%A7%E6%98%AF%E4%BB%80%E4%B9%88/</url>
