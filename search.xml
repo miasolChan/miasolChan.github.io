@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>音乐信息学-序言</title>
+      <link href="/2023/05/22/%E9%9F%B3%E4%B9%90%E4%BF%A1%E6%81%AF%E5%AD%A6-%E5%BA%8F%E8%A8%80/"/>
+      <url>/2023/05/22/%E9%9F%B3%E4%B9%90%E4%BF%A1%E6%81%AF%E5%AD%A6-%E5%BA%8F%E8%A8%80/</url>
+      
+        <content type="html"><![CDATA[<h1>序言</h1><p>一直都很想开专栏讲讲音频音乐技术的内容，但都一拖再拖。上个周刚结束在QMUL的所有课程内容的提交，现在坐在伦敦飞往巴塞罗那旅行的飞机上，除了睡觉我还想写点什么，于是就有了现在的这篇序言。</p><p>《音乐信息学》专栏内容源于学校的Music Informatices课程，并跟随书本<a href="">Fundamentals of music processing</a>进行讲解。虽然期末考试都考完了，但还是想再详细梳理一下这部分的内容，毕竟考试嘛，读过大学的都懂。上了这么多种课，我认为这门课是最适合写成中文专栏的内容。因为在过去几年我学习“音频音乐+计算机”相关内容时发现这一部分的中文资料特别少。要么是从数字音频出发讲述电子信息专业的苦涩DSP知识，要么是从音频音乐制作出发介绍一些概念性的浅显问题。 Music Informatices实际上是Music Information Retrieval (MIR) 方向的基础课程，它是计算机音频音频领域前沿的研究中的一个重要且难度很大的一个方向，本专栏仅仅针对基础内容进行入门讲解。文章我会都用中文进行撰写，专有名词会直译并附上英文便于读者理解。</p><h1>目录</h1><ol><li><a href="">音乐表示法</a></li></ol><h1>参考书</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 音乐信息学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Music Informatics </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>音乐信息学-音乐表示法</title>
+      <link href="/2023/05/22/%E9%9F%B3%E4%B9%90%E4%BF%A1%E6%81%AF%E5%AD%A6-%E9%9F%B3%E4%B9%90%E8%A1%A8%E7%A4%BA%E6%B3%95/"/>
+      <url>/2023/05/22/%E9%9F%B3%E4%B9%90%E4%BF%A1%E6%81%AF%E5%AD%A6-%E9%9F%B3%E4%B9%90%E8%A1%A8%E7%A4%BA%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>免费的宝藏音频音乐工具</title>
       <link href="/2023/04/28/%E2%80%9C%E5%85%8D%E8%B4%B9%E7%9A%84%E5%AE%9D%E8%97%8F%E9%9F%B3%E9%A2%91%E9%9F%B3%E4%B9%90%E5%B7%A5%E5%85%B7%E2%80%9D/"/>
       <url>/2023/04/28/%E2%80%9C%E5%85%8D%E8%B4%B9%E7%9A%84%E5%AE%9D%E8%97%8F%E9%9F%B3%E9%A2%91%E9%9F%B3%E4%B9%90%E5%B7%A5%E5%85%B7%E2%80%9D/</url>
@@ -13,10 +51,16 @@
       
       <categories>
           
-          <category> Tools </category>
+          <category> 实用工具 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> Tools </tag>
+            
+        </tags>
       
     </entry>
     
@@ -112,6 +156,8 @@
             
             <tag> Markdown </tag>
             
+            <tag> Tools </tag>
+            
         </tags>
       
     </entry>
@@ -123,12 +169,12 @@
       <link href="/2023/03/05/resources/"/>
       <url>/2023/03/05/resources/</url>
       
-        <content type="html"><![CDATA[<h2 id="引言"><a class="header-anchor" href="#引言"></a>引言</h2><p>在这里放一些自己感兴趣的方向的论文以及AI音频音乐领域的相关产出。</p><h2 id="应用网站"><a class="header-anchor" href="#应用网站"></a>应用网站</h2><ol><li><a href="https://vocalremover.org/">Vocal Remover</a> audio source separation</li><li><a href="https://github.com/Anjok07/ultimatevocalremovergui">UVR5</a> audio source separation</li><li><a href="https://magenta.tensorflow.org/drumbot">DrumBot: your real-time ML drummer</a></li><li><a href="https://github.com/microsoft/muzic">Muzic</a> music understanding and generation</li><li><a href="https://basicpitch.spotify.com/">Basic Pitch</a> transcription</li></ol><h2 id="视频"><a class="header-anchor" href="#视频"></a>视频</h2><ol><li><a href="https://www.youtube.com/@musicaireadinggroup945/featured">Music + AI Reading Group</a></li></ol><h2 id="API-数据集-工具"><a class="header-anchor" href="#API-数据集-工具"></a>API/数据集/工具</h2><ol><li><a href="https://magenta.tensorflow.org/">Magenta</a></li><li><a href="https://paperswithcode.com/dataset/egfxset">EGFxSet (Electric Guitar Effects Dataset)</a></li><li><a href="https://github.com/joshreiss/Working-with-the-Web-Audio-API">Web Audio API </a> 基于Javascript的Web API</li><li><a href="https://github.com/Natooz/MidiTok">MidiTok</a>  convert MIDI files into tokens</li></ol><h2 id="论文-研究"><a class="header-anchor" href="#论文-研究"></a>论文/研究</h2><h3 id="音频分离-Audio-Separation"><a class="header-anchor" href="#音频分离-Audio-Separation"></a>音频分离 Audio Separation</h3><ol><li><a href="https://arxiv.org/abs/2202.01664">Distortion Audio Effects: Learning How to Recover the Clean Signal</a></li><li><a href="https://arxiv.org/abs/1806.03185">Wave-U-Net: A Multi-Scale Neural Network for End-to-End Audio Source Separation</a></li><li></li></ol><h3 id="自动混音-Automatic-Mixing"><a class="header-anchor" href="#自动混音-Automatic-Mixing"></a>自动混音 Automatic Mixing</h3><ol><li><a href="https://www.researchgate.net/publication/320196585_Ten_Years_of_Automatic_Mixing">Ten Years of Automatic Mixing(2017)</a></li><li><a href="https://pearl.plymouth.ac.uk/bitstream/handle/10026.1/16380/A_Deep_Learning_Approach_to_Intelligent_Drum_Mixing_with_the_Wave_U_Net%20%282%29.pdf?sequence=1&amp;isAllowed=n#:~:text=In%20this%20work%2C%20we%20propose,stereo%20mix%20is%20the%20output.">A Deep Learning Approach to Intelligent Drum Mixing with the Wave-U-Net</a></li><li><a href="https://github.com/adobe-research/DeepAFx-ST">Style Transfer of Audio Effects with Differentiable Signal Processing</a></li><li><a href="https://www.mdpi.com/2076-3417/10/2/638">Deep Learning for Black-Box Modeling of Audio Effects</a></li><li><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=9053093">Modeling Plate and Spring Reverberation Using A Dsp-Informed Deep Neural Network</a></li></ol><h3 id="音乐分类-Music-Classification"><a class="header-anchor" href="#音乐分类-Music-Classification"></a>音乐分类 Music Classification</h3><ol><li><a href="https://towardsdatascience.com/genre-classification-of-electronic-dance-music-using-spotifys-audio-analysis-7350cac7daf0">Genre Classification of Electronic Dance Music Using Spotify’s Audio Analysis</a> 这个是用简单的机器学习分类方法进行实践，有源码和讲解，特别适合入门。</li></ol><h3 id="识别"><a class="header-anchor" href="#识别"></a>识别</h3><ol><li><a href="https://hyakuchiki.github.io/DiffSynthISMIR/">Accompanying Website for Synthesizer Sound Matching with Differentiable DSP</a></li></ol><h3 id="转录Transcription"><a class="header-anchor" href="#转录Transcription"></a>转录Transcription</h3><ol><li><a href="https://github.com/magenta/mt3">MT3: Multi-Task Multitrack Music Transcription</a></li><li><a href="https://keunwoochoi.wordpress.com/2019/06/11/drummernet-deep-unsupervised-drum-transcription/">DrummerNet – Deep Unsupervised Drum Transcription</a></li></ol><h3 id="音乐生成-Music-Generation"><a class="header-anchor" href="#音乐生成-Music-Generation"></a>音乐生成 Music Generation</h3><ol><li><a href="https://github.com/AI-Guru/music-generation-research">Music Modeling and Music Generation with Deep Learning</a></li><li><a href="https://github.com/gudgud96/ChordAL">ChordAL - A chord-based approach for AI music generation</a></li><li><a href="https://arxiv.org/pdf/2301.01361.pdf">MODELING THE RHYTHM FROM LYRICS FOR MELODY GENERATION OF POP SONG</a></li></ol>]]></content>
+        <content type="html"><![CDATA[<h2 id="引言"><a class="header-anchor" href="#引言"></a>引言</h2><p>在这里放一些自己感兴趣的方向的论文以及AI音频音乐领域的相关产出。</p><h2 id="应用网站"><a class="header-anchor" href="#应用网站"></a>应用网站</h2><ol><li><a href="https://vocalremover.org/">Vocal Remover</a> audio source separation</li><li><a href="https://github.com/Anjok07/ultimatevocalremovergui">UVR5</a> audio source separation</li><li><a href="https://magenta.tensorflow.org/drumbot">DrumBot: your real-time ML drummer</a></li><li><a href="https://github.com/microsoft/muzic">Muzic</a> music understanding and generation</li><li><a href="https://basicpitch.spotify.com/">Basic Pitch</a> transcription</li></ol><h2 id="视频"><a class="header-anchor" href="#视频"></a>视频</h2><ol><li><a href="https://www.youtube.com/@musicaireadinggroup945/featured">Music + AI Reading Group</a></li></ol><h2 id="API-数据集-工具"><a class="header-anchor" href="#API-数据集-工具"></a>API/数据集/工具</h2><ol><li><a href="https://magenta.tensorflow.org/">Magenta</a></li><li><a href="https://paperswithcode.com/dataset/egfxset">EGFxSet (Electric Guitar Effects Dataset)</a></li><li><a href="https://github.com/joshreiss/Working-with-the-Web-Audio-API">Web Audio API </a> 基于Javascript的Web API</li><li><a href="https://github.com/Natooz/MidiTok">MidiTok</a>  convert MIDI files into tokens</li></ol><h2 id="论文-研究"><a class="header-anchor" href="#论文-研究"></a>论文/研究</h2><h3 id="音频分离-Audio-Separation"><a class="header-anchor" href="#音频分离-Audio-Separation"></a>音频分离 Audio Separation</h3><ol><li><a href="https://arxiv.org/abs/2202.01664">Distortion Audio Effects: Learning How to Recover the Clean Signal</a></li><li><a href="https://arxiv.org/abs/1806.03185">Wave-U-Net: A Multi-Scale Neural Network for End-to-End Audio Source Separation</a></li></ol><h3 id="自动混音-Automatic-Mixing"><a class="header-anchor" href="#自动混音-Automatic-Mixing"></a>自动混音 Automatic Mixing</h3><ol><li><a href="https://www.researchgate.net/publication/320196585_Ten_Years_of_Automatic_Mixing">Ten Years of Automatic Mixing(2017)</a></li><li><a href="https://pearl.plymouth.ac.uk/bitstream/handle/10026.1/16380/A_Deep_Learning_Approach_to_Intelligent_Drum_Mixing_with_the_Wave_U_Net%20%282%29.pdf?sequence=1&amp;isAllowed=n#:~:text=In%20this%20work%2C%20we%20propose,stereo%20mix%20is%20the%20output.">A Deep Learning Approach to Intelligent Drum Mixing with the Wave-U-Net</a></li><li><a href="https://github.com/adobe-research/DeepAFx-ST">Style Transfer of Audio Effects with Differentiable Signal Processing</a></li><li><a href="https://www.mdpi.com/2076-3417/10/2/638">Deep Learning for Black-Box Modeling of Audio Effects</a></li><li><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=9053093">Modeling Plate and Spring Reverberation Using A Dsp-Informed Deep Neural Network</a></li></ol><h3 id="音乐分类-Music-Classification"><a class="header-anchor" href="#音乐分类-Music-Classification"></a>音乐分类 Music Classification</h3><ol><li><a href="https://towardsdatascience.com/genre-classification-of-electronic-dance-music-using-spotifys-audio-analysis-7350cac7daf0">Genre Classification of Electronic Dance Music Using Spotify’s Audio Analysis</a> 这个是用简单的机器学习分类方法进行实践，有源码和讲解，特别适合入门。</li></ol><h3 id="识别"><a class="header-anchor" href="#识别"></a>识别</h3><ol><li><a href="https://cassebook.github.io/">Computational Analysis of Sound Scenes and Events</a></li><li><a href="https://hyakuchiki.github.io/DiffSynthISMIR/">Accompanying Website for Synthesizer Sound Matching with Differentiable DSP</a></li></ol><h3 id="转录Transcription"><a class="header-anchor" href="#转录Transcription"></a>转录Transcription</h3><ol><li><a href="https://ieeexplore.ieee.org/document/8588423">Automatic Music Transcription: An Overview</a></li><li><a href="https://github.com/magenta/mt3">MT3: Multi-Task Multitrack Music Transcription</a></li><li><a href="https://keunwoochoi.wordpress.com/2019/06/11/drummernet-deep-unsupervised-drum-transcription/">DrummerNet – Deep Unsupervised Drum Transcription</a></li></ol><h3 id="音乐生成-Music-Generation"><a class="header-anchor" href="#音乐生成-Music-Generation"></a>音乐生成 Music Generation</h3><ol><li><a href="https://github.com/AI-Guru/music-generation-research">Music Modeling and Music Generation with Deep Learning</a></li><li><a href="https://github.com/gudgud96/ChordAL">ChordAL - A chord-based approach for AI music generation</a></li><li><a href="https://arxiv.org/pdf/2301.01361.pdf">MODELING THE RHYTHM FROM LYRICS FOR MELODY GENERATION OF POP SONG</a></li></ol>]]></content>
       
       
       <categories>
           
-          <category> AI </category>
+          <category> 人工智能 </category>
           
       </categories>
       
@@ -162,7 +208,7 @@
       
         <tags>
             
-            <tag> 音效 </tag>
+            <tag> Audio Effects </tag>
             
         </tags>
       
@@ -187,7 +233,7 @@
       
         <tags>
             
-            <tag> 音效 </tag>
+            <tag> Audio Effects </tag>
             
         </tags>
       
@@ -257,7 +303,7 @@
       
       <categories>
           
-          <category> AI </category>
+          <category> 人工智能 </category>
           
       </categories>
       
@@ -282,7 +328,7 @@
       
       <categories>
           
-          <category> Blog Build </category>
+          <category> 博客建站 </category>
           
       </categories>
       
