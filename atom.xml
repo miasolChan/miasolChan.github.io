@@ -6,7 +6,7 @@
   <link href="http://www.miasol.top/atom.xml" rel="self"/>
   
   <link href="http://www.miasol.top/"/>
-  <updated>2023-05-22T18:06:27.113Z</updated>
+  <updated>2023-06-04T17:26:29.661Z</updated>
   <id>http://www.miasol.top/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>剑指offer记录</title>
+    <link href="http://www.miasol.top/2023/06/04/%E5%89%91%E6%8C%87offer%E8%AE%B0%E5%BD%95/"/>
+    <id>http://www.miasol.top/2023/06/04/%E5%89%91%E6%8C%87offer%E8%AE%B0%E5%BD%95/</id>
+    <published>2023-06-04T16:40:35.000Z</published>
+    <updated>2023-06-04T17:26:29.661Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="刷题思路"><a class="header-anchor" href="#刷题思路"></a>刷题思路</h2><p>第一遍:</p><ol><li>使用c++独立解。<ul><li>20分钟以上无思路再看他人题解，且标记。</li></ul></li><li>解题完毕，记录自己的题解。</li><li>看他人题解的其他办法</li></ol><h2 id="字符串"><a class="header-anchor" href="#字符串"></a>字符串</h2><h3 id="剑指-Offer-05-替换空格"><a class="header-anchor" href="#剑指-Offer-05-替换空格"></a><a href="https://leetcode.cn/problems/ti-huan-kong-ge-lcof/">剑指 Offer 05. 替换空格</a></h3><p>我的题解</p><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;public:    string replaceSpace(string s) &#123;        string r;        for(int i&#x3D;0; i&lt;s.length();i++)&#123;            char c &#x3D; s[i];            if(c&#x3D;&#x3D;&#39; &#39;)            &#123;                r.push_back(&#39;%&#39;);                r.push_back(&#39;2&#39;);                r.push_back(&#39;0&#39;);            &#125;            else                r.push_back(c);        &#125;        return r;    &#125;&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="剑指-Offer-58-II-左旋转字符串"><a class="header-anchor" href="#剑指-Offer-58-II-左旋转字符串"></a><a href="https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/">剑指 Offer 58 - II. 左旋转字符串</a></h4><p>我的题解</p><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;&#x2F;切片法class Solution &#123;public:    string reverseLeftWords(string s, int n) &#123;        return s.substr(n,s.length()-n) + s.substr(0,n);    &#125;&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;&#x2F;切片法过于暴力&#x2F;&#x2F;遍历法取余class Solution &#123;public:    string reverseLeftWords(string s, int n) &#123;        string r &#x3D; s;         int len &#x3D; s.length();        for(int i&#x3D;0; i&lt;len;i++)        &#123;            r[(i+len-n)%len] &#x3D; s[i];        &#125;        return r;    &#125;&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;刷题思路&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#刷题思路&quot;&gt;&lt;/a&gt;刷题思路&lt;/h2&gt;
+&lt;p&gt;第一遍:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用c++独立解。
+&lt;ul&gt;
+&lt;li&gt;20分钟以上无思路再看他人题解，且标记。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/</summary>
+      
+    
+    
+    
+    <category term="剑指offer" scheme="http://www.miasol.top/categories/%E5%89%91%E6%8C%87offer/"/>
+    
+    
+    <category term="Data Structure" scheme="http://www.miasol.top/tags/Data-Structure/"/>
+    
+    <category term="Leetcode" scheme="http://www.miasol.top/tags/Leetcode/"/>
+    
+  </entry>
   
   <entry>
     <title>音乐信息学-序言</title>
