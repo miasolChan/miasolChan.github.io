@@ -296,33 +296,6 @@
     
     
     <entry>
-      <title>FIR与IIR滤波器</title>
-      <link href="/2023/02/23/FIR%E4%B8%8EIIR%E6%BB%A4%E6%B3%A2%E5%99%A8/"/>
-      <url>/2023/02/23/FIR%E4%B8%8EIIR%E6%BB%A4%E6%B3%A2%E5%99%A8/</url>
-      
-        <content type="html"><![CDATA[<h2 id="FIR"><a class="header-anchor" href="#FIR"></a>FIR</h2>]]></content>
-      
-      
-      <categories>
-          
-          <category> DSP </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Filter </tag>
-            
-            <tag> Digital Audio </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>整理的一些数据结构基础算法</title>
       <link href="/2023/02/22/%E6%95%B4%E7%90%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
       <url>/2023/02/22/%E6%95%B4%E7%90%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</url>
@@ -340,31 +313,6 @@
         <tags>
             
             <tag> Data Structure </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>CNN</title>
-      <link href="/2023/02/22/CNN/"/>
-      <url>/2023/02/22/CNN/</url>
-      
-        <content type="html"><![CDATA[<h2 id="引言"><a class="header-anchor" href="#引言"></a>引言</h2><p><em>卷积神经网络</em>（convolutional neural network，CNN）是一类为<strong>处理图像</strong>数据而设计的神经网络。</p><h2 id="卷积"><a class="header-anchor" href="#卷积"></a>卷积</h2>]]></content>
-      
-      
-      <categories>
-          
-          <category> 人工智能 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Deep Learning </tag>
             
         </tags>
       
