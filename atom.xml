@@ -6,7 +6,7 @@
   <link href="http://www.miasol.top/atom.xml" rel="self"/>
   
   <link href="http://www.miasol.top/"/>
-  <updated>2023-08-20T14:29:25.631Z</updated>
+  <updated>2023-08-21T13:43:04.700Z</updated>
   <id>http://www.miasol.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Wwise音频总线流程</title>
+    <link href="http://www.miasol.top/2023/08/21/Wwise%E9%9F%B3%E9%A2%91%E6%80%BB%E7%BA%BF%E6%B5%81%E7%A8%8B/"/>
+    <id>http://www.miasol.top/2023/08/21/Wwise%E9%9F%B3%E9%A2%91%E6%80%BB%E7%BA%BF%E6%B5%81%E7%A8%8B/</id>
+    <published>2023-08-21T11:46:54.000Z</published>
+    <updated>2023-08-21T13:43:04.700Z</updated>
+    
+    <content type="html"><![CDATA[<img src="10055_2021_589_Fig8_HTML.png" alt="Fig. 8" style="zoom:50%;" />]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;img src=&quot;10055_2021_589_Fig8_HTML.png&quot; alt=&quot;Fig. 8&quot; style=&quot;zoom:50%;&quot; /&gt;
+</summary>
+      
+    
+    
+    
+    <category term="游戏音频" scheme="http://www.miasol.top/categories/%E6%B8%B8%E6%88%8F%E9%9F%B3%E9%A2%91/"/>
+    
+    
+    <category term="Wwise" scheme="http://www.miasol.top/tags/Wwise/"/>
+    
+  </entry>
   
   <entry>
     <title>Wwise 插件开发步骤</title>
