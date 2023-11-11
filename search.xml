@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>如何确定二分查找的边界</title>
+      <link href="/2023/11/11/%E5%A6%82%E4%BD%95%E5%87%86%E7%A1%AE%E7%A1%AE%E5%AE%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%9A%84%E8%BE%B9%E7%95%8C/"/>
+      <url>/2023/11/11/%E5%A6%82%E4%BD%95%E5%87%86%E7%A1%AE%E7%A1%AE%E5%AE%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%9A%84%E8%BE%B9%E7%95%8C/</url>
+      
+        <content type="html"><![CDATA[<h2 id="关于二分查找的基础知识">关于二分查找的基础知识</h2><p>使用二分查找的先决条件是，被查找序列必须是<u>单调有序</u>。基本思路如下：</p><p>假设查找序列为升序，那么首先计算出中间位置元素的值，并于目标值进行比较，本元素比目标值小，那么继续在本元素的右边序列进行二分查找。</p><p>整体思路看起来不难，但重点是考察查找边界的确定。下面我将解释两种二分查找的边界确定思路。</p><h2 id="方法一左闭右闭-left-right">方法一：左闭右闭 <strong>[left,right]</strong></h2><p>左闭右闭的主要意义在于：</p><ol type="1"><li>每次查找的时候左右区间下标表示的值都要取到</li><li>因为都要取，所以left = right是有意义的</li></ol><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span><span class="token keyword">public</span><span class="token operator">:</span>    <span class="token keyword">int</span> <span class="token function">search</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>        <span class="token keyword">int</span> right <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">//最右值被取，size-1才表示最后一个值</span>        <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;=</span> right<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">//left = right有意义</span>            <span class="token keyword">int</span> middle <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>right <span class="token operator">-</span> left<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//数学上等同(left+right)/2,但计算机里可能两个int相加会溢出。注意的是按照Leetcode704的数据前提，使用left+right是不会溢出的</span>            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>middle<span class="token punctuation">]</span> <span class="token operator">></span> target<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>                right <span class="token operator">=</span> middle <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">//target在左边，原本的middle取过了，所以right-1</span>            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>middle<span class="token punctuation">]</span> <span class="token operator">&lt;</span> target<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>                left <span class="token operator">=</span> middle <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">//target在右边，原本的middle取过了，所以left+1</span>            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>                 <span class="token keyword">return</span> middle<span class="token punctuation">;</span>            <span class="token punctuation">&#125;</span>        <span class="token punctuation">&#125;</span>        <span class="token comment">// 未找到目标值</span>        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="方法二左闭右开-left-right">方法二：左闭右开 <strong>[left,right]</strong>）</h2><p>左闭右开的意义在于：</p><ol type="1"><li>每次查找的时候，右边的值是不取到的</li><li>因为最右值不取，所以left = right是没有意义的</li></ol><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">&#123;</span>  <span class="token keyword">public</span><span class="token operator">:</span>  <span class="token keyword">int</span> <span class="token function">search</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>      <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>      <span class="token keyword">int</span> right <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//右值不取</span>      <span class="token keyword">while</span><span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token comment">//left = right是没有意义的</span>      <span class="token punctuation">&#123;</span>        <span class="token keyword">int</span> middle <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>        <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>middle<span class="token punctuation">]</span><span class="token operator">></span>target<span class="token punctuation">)</span> right <span class="token operator">=</span> middle<span class="token punctuation">;</span> <span class="token comment">// middle下标取过，而right不取，所以这里直接right=middle</span>        <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>middle<span class="token punctuation">]</span><span class="token operator">&lt;</span>target<span class="token punctuation">)</span>left <span class="token operator">=</span> middle<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">// middle下标取过，而left也要取，所以left = middle+1;</span>        <span class="token keyword">else</span> <span class="token keyword">return</span> middle<span class="token punctuation">;</span>      <span class="token punctuation">&#125;</span>      <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Data Structure </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>编程思想与游戏音频设计中的回调（Callback）</title>
       <link href="/2023/11/08/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E4%B8%8E%E6%B8%B8%E6%88%8F%E9%9F%B3%E9%A2%91%E8%AE%BE%E8%AE%A1%E4%B8%AD%E7%9A%84%E5%9B%9E%E8%B0%83%EF%BC%88Callback%EF%BC%89/"/>
       <url>/2023/11/08/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E4%B8%8E%E6%B8%B8%E6%88%8F%E9%9F%B3%E9%A2%91%E8%AE%BE%E8%AE%A1%E4%B8%AD%E7%9A%84%E5%9B%9E%E8%B0%83%EF%BC%88Callback%EF%BC%89/</url>
@@ -11,6 +36,20 @@
         <content type="html"><![CDATA[<p>【开坑未写完】</p>]]></content>
       
       
+      <categories>
+          
+          <category> 游戏音频 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+            <tag> Game Audio </tag>
+            
+        </tags>
       
     </entry>
     
@@ -34,6 +73,8 @@
         <tags>
             
             <tag> Digital Audio </tag>
+            
+            <tag> Game Audio </tag>
             
         </tags>
       
@@ -286,6 +327,8 @@
         <tags>
             
             <tag> Wwise </tag>
+            
+            <tag> Game Audio </tag>
             
         </tags>
       
@@ -540,6 +583,8 @@
         <tags>
             
             <tag> Audio Effects </tag>
+            
+            <tag> Game Audio </tag>
             
         </tags>
       
