@@ -1,0 +1,362 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Java浅拷贝与深拷贝的理解 | Miasol's Blog</title><meta name="author" content="Miasol"><meta name="copyright" content="Miasol"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="定义 浅拷贝：只是增加了一个指针指向已存在的内存地址。 深拷贝：增加了一个指针并且申请了一个新的内存，使这个增加的指针指向这个新的内存。 浅拷贝的方法 在Java中，浅拷贝（Shallow Copy）是指仅复制对象的顶层结构，而不递归地复制它包含的任何对象引用。浅拷贝创建了一个新对象，但其字段引用的是原始对象中相同的对象和数组。以下是Java中常用的几种浅拷贝方法： 1. 使用 clone() 方">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java浅拷贝与深拷贝的理解">
+<meta property="og:url" content="http://www.miasol.top/2023/12/04/Java%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D%E7%9A%84%E7%90%86%E8%A7%A3/index.html">
+<meta property="og:site_name" content="Miasol&#39;s Blog">
+<meta property="og:description" content="定义 浅拷贝：只是增加了一个指针指向已存在的内存地址。 深拷贝：增加了一个指针并且申请了一个新的内存，使这个增加的指针指向这个新的内存。 浅拷贝的方法 在Java中，浅拷贝（Shallow Copy）是指仅复制对象的顶层结构，而不递归地复制它包含的任何对象引用。浅拷贝创建了一个新对象，但其字段引用的是原始对象中相同的对象和数组。以下是Java中常用的几种浅拷贝方法： 1. 使用 clone() 方">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.miasol.top/img/avatar.jpg">
+<meta property="article:published_time" content="2023-12-04T15:15:35.000Z">
+<meta property="article:modified_time" content="2023-12-08T09:48:49.019Z">
+<meta property="article:author" content="Miasol">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.miasol.top/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://www.miasol.top/2023/12/04/Java%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D%E7%9A%84%E7%90%86%E8%A7%A3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Java浅拷贝与深拷贝的理解',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-12-08 17:48:49'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Miasol's Blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/portfolio/"><i class="fa-fw fas fa-link"></i><span> 作品集</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: #363636"><nav id="nav"><span id="blog-info"><a href="/" title="Miasol's Blog"><img class="site-icon" src="/img/logo.png"/></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/portfolio/"><i class="fa-fw fas fa-link"></i><span> 作品集</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Java浅拷贝与深拷贝的理解</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-12-04T15:15:35.000Z" title="发表于 2023-12-04 23:15:35">2023-12-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-12-08T09:48:49.019Z" title="更新于 2023-12-08 17:48:49">2023-12-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/">Java</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Java浅拷贝与深拷贝的理解"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="定义">定义</h2>
+<p>浅拷贝：只是增加了一个指针指向已存在的内存地址。</p>
+<p>深拷贝：增加了一个指针并且申请了一个新的内存，使这个增加的指针指向这个新的内存。</p>
+<h2 id="浅拷贝的方法">浅拷贝的方法</h2>
+<p>在Java中，浅拷贝（Shallow
+Copy）是指仅复制对象的顶层结构，而不递归地复制它包含的任何对象引用。浅拷贝创建了一个新对象，但其字段引用的是原始对象中相同的对象和数组。以下是Java中常用的几种浅拷贝方法：</p>
+<h3 id="使用-clone-方法">1. 使用 <code>clone()</code> 方法</h3>
+<p>如果一个类实现了 <code>Cloneable</code> 接口，可以通过覆盖
+<code>Object</code> 类的 <code>clone()</code> 方法来实现浅拷贝。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyObject</span> <span class="token keyword">implements</span> <span class="token class-name">Cloneable</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> data<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">MyObject</span> <span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token class-name">MyObject</span><span class="token punctuation">)</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">CloneNotSupportedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 处理异常</span>
+            <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//数组clone()</span>
+<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> original <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> copy <span class="token operator">=</span> original<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="构造函数">2. 构造函数</h3>
+<p>创建一个新的对象，并使用现有对象的值来初始化新对象的字段。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyObject</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token class-name">SubObject</span> obj<span class="token punctuation">;</span>
+
+    <span class="token comment">// 构造函数用于浅拷贝</span>
+    <span class="token keyword">public</span> <span class="token class-name">MyObject</span><span class="token punctuation">(</span><span class="token class-name">MyObject</span> another<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>obj <span class="token operator">=</span> another<span class="token punctuation">.</span>obj<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="使用工厂方法">3. 使用工厂方法</h3>
+<p>定义一个方法来创建一个新对象，并将现有对象的字段值复制到新对象中。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyObject</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> data<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">MyObject</span> <span class="token function">shallowCopy</span><span class="token punctuation">(</span><span class="token class-name">MyObject</span> other<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">MyObject</span> newObj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        newObj<span class="token punctuation">.</span>data <span class="token operator">=</span> other<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> newObj<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="使用-system.arraycopy">4. 使用
+<code>System.arraycopy()</code></h3>
+<p>对于数组类型，可以使用 <code>System.arraycopy()</code>
+方法进行浅拷贝。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> original <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> copy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>original<span class="token punctuation">.</span>length<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">arraycopy</span><span class="token punctuation">(</span>original<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> copy<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> original<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//这个方法需要五个参数：源数组、源数组中的起始位置、目标数组、目标数组中的起始位置以及要复制的元素数量。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="使用-arrays.copyof-和-arrays.copyofrange">5. 使用
+<code>Arrays.copyOf()</code> 和 <code>Arrays.copyOfRange()</code></h3>
+<p>对于数组，<code>Arrays.copyOf()</code> 和
+<code>Arrays.copyOfRange()</code> 方法提供了方便的浅拷贝功能。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> original <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> copy <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">copyOf</span><span class="token punctuation">(</span>original<span class="token punctuation">,</span> original<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="注意事项">注意事项</h3>
+<ul>
+<li>浅拷贝不会复制对象中引用的其他对象；两个对象会<strong>共享</strong>相同的引用成员。</li>
+<li>在进行浅拷贝时，如果原始对象和副本同时引用了可变对象，对这些可变对象的修改将影响到两个对象。</li>
+<li>浅拷贝通常适用于对象没有深层次嵌套或对象内部引用不会被外部修改的情况。</li>
+</ul>
+<h2 id="浅拷贝的优势">浅拷贝的优势</h2>
+<p>浅拷贝（Shallow Copy）在特定情况下提供了一些优势，主要包括：</p>
+<h3 id="性能提升">1. 性能提升</h3>
+<ul>
+<li><strong>更快的执行时间</strong>：浅拷贝仅复制对象的顶层结构，而不复制其内部的对象引用，因此执行起来比深拷贝快得多。</li>
+<li><strong>减少内存使用</strong>：由于不创建内部对象的副本，浅拷贝减少了内存占用。</li>
+</ul>
+<h3 id="简单实现">2. 简单实现</h3>
+<ul>
+<li><strong>易于编写</strong>：实现浅拷贝通常比实现深拷贝简单，特别是当对象结构比较简单时。</li>
+<li><strong>标准方法支持</strong>：Java中许多标准方法（如
+<code>Object.clone()</code> 和
+<code>System.arraycopy()</code>）默认提供浅拷贝。</li>
+</ul>
+<h3 id="适合特定情况">3. 适合特定情况</h3>
+<ul>
+<li><strong>共享资源</strong>：当需要共享相同的资源或数据时，浅拷贝是一个好选择。例如，多个对象可能需要引用相同的配置信息或数据集。</li>
+<li><strong>不可变对象</strong>：如果对象只包含基本类型数据或不可变对象（如
+<code>String</code>），则浅拷贝和深拷贝的效果相同。</li>
+</ul>
+<h3 id="控制内存占用">4. 控制内存占用</h3>
+<ul>
+<li><strong>减少内存占用</strong>：在内存使用受限的环境下，浅拷贝可以有效控制每个对象的内存占用。</li>
+</ul>
+<h3 id="对象共享">5. 对象共享</h3>
+<ul>
+<li><strong>维护对象间的关联</strong>：某些情况下，对象间的关联需要保持一致，此时共享内部对象可能是必需的。</li>
+</ul>
+<h2 id="深拷贝的实现方法">深拷贝的实现方法</h2>
+<p>深拷贝意味着复制对象的整个对象，包括所有的嵌套对象。以下是实现深拷贝的几种常用方法：</p>
+<h3 id="递归复制">1. 递归复制</h3>
+<p>对于每个成员变量，如果它是一个对象，递归地对其进行深拷贝。这种方法需要手动为每个内部对象编写拷贝逻辑。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyClass</span> <span class="token keyword">implements</span> <span class="token class-name">Cloneable</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> data<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">SubObject</span> subObject<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">MyClass</span> <span class="token function">deepCopy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">MyClass</span> copy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        copy<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+        copy<span class="token punctuation">.</span>subObject <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>subObject <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token keyword">this</span><span class="token punctuation">.</span>subObject<span class="token punctuation">.</span><span class="token function">deepCopy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> copy<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="使用序列化">2. 使用序列化</h3>
+<p>如果对象实现了 <code>Serializable</code>
+接口，可以通过序列化和反序列化来实现深拷贝。这种方法不需要为每个类编写拷贝逻辑，但所有涉及的对象都必须实现
+<code>Serializable</code> 接口。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Object</span> <span class="token function">deepCopySerializable</span><span class="token punctuation">(</span><span class="token class-name">Object</span> object<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span><span class="token punctuation">,</span> <span class="token class-name">ClassNotFoundException</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">ByteArrayOutputStream</span> byteOut <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ByteArrayOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">try</span> <span class="token punctuation">(</span><span class="token class-name">ObjectOutputStream</span> out <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectOutputStream</span><span class="token punctuation">(</span>byteOut<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        out<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token class-name">ByteArrayInputStream</span> byteIn <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ByteArrayInputStream</span><span class="token punctuation">(</span>byteOut<span class="token punctuation">.</span><span class="token function">toByteArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">try</span> <span class="token punctuation">(</span><span class="token class-name">ObjectInputStream</span> in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectInputStream</span><span class="token punctuation">(</span>byteIn<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> in<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="使用第三方库">3. 使用第三方库</h3>
+<p>一些第三方库提供了深拷贝的实现。例如，Apache Commons Lang 的
+<code>SerializationUtils.clone()</code>
+方法（它也要求对象是可序列化的）。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">MyObject</span> copiedObject <span class="token operator">=</span> <span class="token class-name">SerializationUtils</span><span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span>originalObject<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="使用拷贝构造函数">4. 使用拷贝构造函数</h3>
+<p>为对象创建一个拷贝构造函数，它接收一个对象作为参数，并复制其所有字段。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyClass</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token class-name">SubObject</span> subObject<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">MyClass</span><span class="token punctuation">(</span><span class="token class-name">MyClass</span> other<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>subObject <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubObject</span><span class="token punctuation">(</span>other<span class="token punctuation">.</span>subObject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="注意事项-1">注意事项</h3>
+<ul>
+<li>深拷贝可能比较消耗资源，特别是对于大型或复杂的对象。</li>
+<li>需要处理循环引用的情况，以避免无限递归。</li>
+<li>选择合适的深拷贝方法取决于具体场景和对象的复杂性。</li>
+</ul>
+<p>总之，实现深拷贝需要确保对象图中的所有对象都被适当地复制。不同的实现方法有其特定的适用场景和优缺点，因此在选择时应考虑实际的需求和上下文。</p>
+<h2 id="深拷贝的优势">深拷贝的优势</h2>
+<p>深拷贝（Deep Copy）在某些情况下相较于浅拷贝（Shallow
+Copy）有着明显的优势。它指的是复制对象及其所有嵌套对象的过程，从而创建一个完全独立的对象副本。深拷贝的主要优势包括：</p>
+<h3 id="数据独立性">1. 数据独立性</h3>
+<ul>
+<li>深拷贝创建的副本完全独立于原始对象，修改副本不会影响原始对象，反之亦然。这对于防止意外修改原始数据非常重要。</li>
+</ul>
+<h3 id="避免副作用">2. 避免副作用</h3>
+<ul>
+<li>在复杂的应用程序中，对象经常被多个组件共享。深拷贝确保了在一个组件中对副本的更改不会导致其他组件中的数据不一致。</li>
+</ul>
+<h3 id="安全性">3. 安全性</h3>
+<ul>
+<li>在涉及安全性的场景中，例如在网络传输中接收对象时，深拷贝可以防止对原始对象的潜在修改，从而增加安全性。</li>
+</ul>
+<h3 id="解耦">4. 解耦</h3>
+<ul>
+<li>深拷贝有助于实现数据和逻辑的解耦。复制的对象可以在不影响其他部分的前提下独立变化。</li>
+</ul>
+<h3 id="实现撤销操作">5. 实现撤销操作</h3>
+<ul>
+<li>在某些应用中，如编辑器，可以通过深拷贝的方式保存历史状态，从而实现撤销和重做功能。</li>
+</ul>
+<h3 id="并发编程">6. 并发编程</h3>
+<ul>
+<li>在多线程环境中，深拷贝可以创建数据的本地副本，减少线程间的竞争和锁的需求，提高性能。</li>
+</ul>
+<h3 id="注意事项-2">注意事项</h3>
+<ul>
+<li>深拷贝可能会消耗更多内存和处理时间，尤其是对于大型或复杂的对象。</li>
+<li>实现深拷贝可能需要更多的编程工作，特别是在对象图结构复杂时。</li>
+<li>在某些情况下，浅拷贝可能已足够，因此在选择深拷贝前应评估实际需求。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://www.miasol.top">Miasol</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://www.miasol.top/2023/12/04/Java%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D%E7%9A%84%E7%90%86%E8%A7%A3/">http://www.miasol.top/2023/12/04/Java%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D%E7%9A%84%E7%90%86%E8%A7%A3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://www.miasol.top" target="_blank">Miasol's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/11/22/%E5%85%B3%E4%BA%8E%E9%93%BE%E8%A1%A8%E7%9A%84%E5%87%A0%E9%81%93%E7%BB%8F%E5%85%B8%E9%A2%98%E7%9B%AE/" title="关于链表的几道经典题目"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">关于链表的几道经典题目</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Miasol</div><div class="author-info__description">Audio & Music Programmer</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/miasolChan" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:miasol@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">浅拷贝的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-clone-%E6%96%B9%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">1. 使用 clone() 方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.</span> <span class="toc-text">2. 构造函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95"><span class="toc-number">2.3.</span> <span class="toc-text">3. 使用工厂方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-system.arraycopy"><span class="toc-number">2.4.</span> <span class="toc-text">4. 使用
+System.arraycopy()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-arrays.copyof-%E5%92%8C-arrays.copyofrange"><span class="toc-number">2.5.</span> <span class="toc-text">5. 使用
+Arrays.copyOf() 和 Arrays.copyOfRange()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.6.</span> <span class="toc-text">注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-number">3.</span> <span class="toc-text">浅拷贝的优势</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E6%8F%90%E5%8D%87"><span class="toc-number">3.1.</span> <span class="toc-text">1. 性能提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0"><span class="toc-number">3.2.</span> <span class="toc-text">2. 简单实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%82%E5%90%88%E7%89%B9%E5%AE%9A%E6%83%85%E5%86%B5"><span class="toc-number">3.3.</span> <span class="toc-text">3. 适合特定情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8"><span class="toc-number">3.4.</span> <span class="toc-text">4. 控制内存占用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E5%85%B1%E4%BA%AB"><span class="toc-number">3.5.</span> <span class="toc-text">5. 对象共享</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">深拷贝的实现方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E5%A4%8D%E5%88%B6"><span class="toc-number">4.1.</span> <span class="toc-text">1. 递归复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-number">4.2.</span> <span class="toc-text">2. 使用序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93"><span class="toc-number">4.3.</span> <span class="toc-text">3. 使用第三方库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">4.4.</span> <span class="toc-text">4. 使用拷贝构造函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9-1"><span class="toc-number">4.5.</span> <span class="toc-text">注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-number">5.</span> <span class="toc-text">深拷贝的优势</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="toc-number">5.1.</span> <span class="toc-text">1. 数据独立性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%BF%E5%85%8D%E5%89%AF%E4%BD%9C%E7%94%A8"><span class="toc-number">5.2.</span> <span class="toc-text">2. 避免副作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%80%A7"><span class="toc-number">5.3.</span> <span class="toc-text">3. 安全性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E8%80%A6"><span class="toc-number">5.4.</span> <span class="toc-text">4. 解耦</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%92%A4%E9%94%80%E6%93%8D%E4%BD%9C"><span class="toc-number">5.5.</span> <span class="toc-text">5. 实现撤销操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B"><span class="toc-number">5.6.</span> <span class="toc-text">6. 并发编程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9-2"><span class="toc-number">5.7.</span> <span class="toc-text">注意事项</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/04/Java%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D%E7%9A%84%E7%90%86%E8%A7%A3/" title="Java浅拷贝与深拷贝的理解">Java浅拷贝与深拷贝的理解</a><time datetime="2023-12-04T15:15:35.000Z" title="发表于 2023-12-04 23:15:35">2023-12-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/22/%E5%85%B3%E4%BA%8E%E9%93%BE%E8%A1%A8%E7%9A%84%E5%87%A0%E9%81%93%E7%BB%8F%E5%85%B8%E9%A2%98%E7%9B%AE/" title="关于链表的几道经典题目">关于链表的几道经典题目</a><time datetime="2023-11-22T12:09:57.000Z" title="发表于 2023-11-22 20:09:57">2023-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/21/%E6%95%B0%E7%BB%84-2-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3-%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/" title="数组[2]-滑动窗口-长度最小的子数组">数组[2]-滑动窗口-长度最小的子数组</a><time datetime="2023-11-21T07:54:50.000Z" title="发表于 2023-11-21 15:54:50">2023-11-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/15/%E6%95%B0%E7%BB%84-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/" title="数组[1]-快慢指针- 移除元素">数组[1]-快慢指针- 移除元素</a><time datetime="2023-11-15T02:19:54.000Z" title="发表于 2023-11-15 10:19:54">2023-11-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/11/%E5%A6%82%E4%BD%95%E7%A1%AE%E5%AE%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%9A%84%E8%BE%B9%E7%95%8C/" title="如何确定二分查找的边界">如何确定二分查找的边界</a><time datetime="2023-11-11T04:00:45.000Z" title="发表于 2023-11-11 12:00:45">2023-11-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Miasol</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a><span class="footer-separator">|</span><a target="_blank" rel="noopener" href="https://www.miit.gov.cn/">蜀ICP备20020522号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></body></html>
